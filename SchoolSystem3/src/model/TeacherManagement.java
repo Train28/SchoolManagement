@@ -64,8 +64,8 @@ public class TeacherManagement {
 				System.out.println(id + "/ " + name + "/ " + address + "/ " + age + "/ " + salary + "/ " + teachHours);
 			}
 
-		} catch (Exception e) {			
-			System.out.println("Error: "+ e);
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
 		}
 
 	}

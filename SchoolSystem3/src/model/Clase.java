@@ -1,12 +1,12 @@
 package model;
 
 public class Clase {
-	
+
 	private int id_class;
 	private String section;
 	private String time_class;
 	private int id_subject;
-	
+
 	public Clase(int id_class, String section, String time_class, int id_subject) {
 		this.id_class = id_class;
 		this.section = section;
@@ -45,11 +45,5 @@ public class Clase {
 	public void setId_subject(int id_subject) {
 		this.id_subject = id_subject;
 	}
-	
-	
-	
-	
-	
-	
 
 }

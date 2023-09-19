@@ -1,11 +1,10 @@
 package model;
 
 public class Subject {
-	
+
 	int idSubject;
 	String nameSubject;
-	
-	
+
 	public Subject(int idSubject, String nameSubject) {
 		this.idSubject = idSubject;
 		this.nameSubject = nameSubject;
@@ -26,10 +25,5 @@ public class Subject {
 	public void setNameSubject(String nameSubject) {
 		this.nameSubject = nameSubject;
 	}
-	
-	
-	
-	
-	
 
 }

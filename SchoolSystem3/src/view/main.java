@@ -15,34 +15,63 @@ public class main {
 		System.out.println("1. Subject" + "\n" + "2. Teacher");
 		Scanner sc = new Scanner(System.in);
 		int key = sc.nextInt();
+		int p;
 
 		if (key == 1) {
+			int idSubject;
+			String nameSubject;
+			SubjectManagement subm = new SubjectManagement();
+			System.out.println("Write the number of the action u want to do");
+			System.out.println(
+					"1. Insert new subject" + "\n" + "2. Show all the subjects" + "\n" + "3. Delete subject using ID");
+			p = sc.nextInt();
+
+			switch (p) {
+			case 1:
+				System.out.println("Enter Id Subject");
+				idSubject = sc.nextInt();
+				System.out.println("Enter name Subject");
+				nameSubject = sc.next();
+				subm.insertSubject(idSubject, nameSubject);
+				break;
+			case 2:
+				subm.selectSubject();
+				break;
+			case 3:
+				System.out.println("Enter Id Number");
+				idSubject = sc.nextInt();
+				subm.deleteSubject(idSubject);
+				break;
+
+			default:
+				break;
+			}
 
 		} else if (key == 2) {
-			int idTeacher,age,teachingHours;
-			String nameTeacher,address;
+			int idTeacher, age, teachingHours;
+			String nameTeacher, address;
 			double salary;
-			TeacherManagement tm= new TeacherManagement();
+			TeacherManagement tm = new TeacherManagement();
 			System.out.println("Write the number of the action u want to do");
-			System.out.println(	"1. Insert new teacher" + "\n" + "2. Show all the teachers" 
-			+ "\n" + "3. Delete teacher using ID");
-			int p = sc.nextInt();
+			System.out.println(
+					"1. Insert new teacher" + "\n" + "2. Show all the teachers" + "\n" + "3. Delete teacher using ID");
+			p = sc.nextInt();
 
 			switch (p) {
 			case 1:
 				System.out.println("Enter Id Number");
-				 idTeacher = sc.nextInt();
+				idTeacher = sc.nextInt();
 				System.out.println("Enter name teacher");
-				 nameTeacher = sc.next();
+				nameTeacher = sc.next();
 				System.out.println("Enter address");
-				 address = sc.next();
+				address = sc.next();
 				System.out.println("Enter age");
-				 age = sc.nextInt();
+				age = sc.nextInt();
 				System.out.println("Enter salary");
-				 salary = sc.nextDouble();
+				salary = sc.nextDouble();
 				System.out.println("Enter how many hours the teacher work");
 				teachingHours = sc.nextInt();
-				tm.insertTeacher(idTeacher, nameTeacher, nameTeacher, age, salary, teachingHours);
+				tm.insertTeacher(idTeacher, nameTeacher, address, age, salary, teachingHours);
 				break;
 			case 2:
 				tm.selectTeacher();
@@ -58,60 +87,10 @@ public class main {
 			default:
 				break;
 			}
-			
+
 		} else {
 			;
 		}
-
-		int idTeacher = sc.nextInt();
-		String nameTeacher = sc.next();
-		/*
-		 * * String address = sc.next(); int age= sc.nextInt(); double salary =
-		 * sc.nextDouble(); int teachingHours = sc.nextInt();
-		 */
-
-		/* Metodos para Subject(insertar) */
-		SubjectManagement subm = new SubjectManagement();
-		subm.insertSubject(idTeacher, nameTeacher);
-
-		/*
-		 * System.out.println("Create student"); Scanner sc = new Scanner(System.in);
-		 * int idStudent= sc.nextInt(); String nameStudent=sc.next(); String address =
-		 * sc.next(); int age= sc.nextInt(); double pension = sc.nextDouble();
-		 * 
-		 * 
-		 * Alumno s = new Alumno(idStudent, nameStudent, address, age, pension);
-		 * 
-		 * try { c.getConexion();
-		 * 
-		 * 
-		 * 
-		 * String sql =
-		 * "insert into student(id_student,name_student,address,age_student,pension)" +
-		 * "values(?,?,?,?,?)"; PreparedStatement stmt =
-		 * Conexion.con.prepareStatement(sql); stmt.setInt(1, s.getDni());
-		 * stmt.setString(2, s.getName()); stmt.setString(3, s.getAddress());
-		 * stmt.setInt(4, s.getAge()); stmt.setDouble(5, s.getPension());
-		 * 
-		 * stmt.execute(); System.out.println("Registro exitoso"); } catch (Exception e)
-		 * { // TODO: handle exception }
-		 */
-
-		/*
-		 * System.out.println("Create subject"); Scanner sc = new Scanner(System.in);
-		 * 
-		 * int idSubject= sc.nextInt(); String nameSubject=sc.next();
-		 * 
-		 * Subject sub = new Subject(idSubject, nameSubject);
-		 * 
-		 * try { c.getConexion(); String sql =
-		 * "insert into subject(id_subject,name_subject)" + "values(?,? )";
-		 * PreparedStatement stmt = Conexion.con.prepareStatement(sql); stmt.setInt(1,
-		 * sub.getIdSubject()); stmt.setString(2, sub.getNameSubject());
-		 * 
-		 * stmt.execute(); System.out.println("Registro exitoso"); } catch (Exception e)
-		 * { // TODO: handle exception }
-		 */
 
 		/*
 		 * System.out.println("Create clase"); Scanner sc = new Scanner(System.in);
