@@ -15,7 +15,6 @@ public class TeacherManagement {
 		Teacher t = new Teacher(idTeacher, nameTeacher, address, age, salary, teachingHours);
 
 		try {
-
 			String sql = "insert into teacher(id_teacher,name_teacher,address,age_teacher,salary,teaching_hours)"
 					+ "values(?,?,?,?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(sql);

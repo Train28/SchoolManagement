@@ -1,6 +1,5 @@
 package view;
 
-
 import model.*;
 
 import java.util.*;
@@ -10,7 +9,7 @@ public class main {
 	public static void main(String[] args) {
 
 		System.out.println("Write the number u want to register");
-		System.out.println("1. Subject" + "\n" + "2. Teacher"+ "\n" + "3. Student"+ "\n" + "4. Class");
+		System.out.println("1. Subject" + "\n" + "2. Teacher" + "\n" + "3. Student" + "\n" + "4. Class");
 		Scanner sc = new Scanner(System.in);
 		int key = sc.nextInt();
 		int p;
@@ -20,8 +19,7 @@ public class main {
 			String nameSubject;
 			SubjectManagement subm = new SubjectManagement();
 			System.out.println("Write the number of the action u want to do");
-			System.out.println(
-					"1. Insert new subject" + "\n" + "2. Show all the subjects" + "\n" + "3. Delete subject using ID");
+			System.out.println("1. Insert new subject" + "\n" + "2. Show all the subjects" + "\n" + "3. Delete subject using ID");
 			p = sc.nextInt();
 
 			switch (p) {
@@ -82,14 +80,15 @@ public class main {
 				break;
 			}
 
-		} else if(key == 3) {
+		} else if (key == 3) {
 
 			int id, age;
 			String name, address;
 			double pension;
 			AlumnoManagement alm = new AlumnoManagement();
 			System.out.println("Write the number of the action u want to do");
-			System.out.println("1. Insert new student" + "\n" + "2. Show all the students" + "\n" + "3. Delete student using ID");
+			System.out.println(
+					"1. Insert new student" + "\n" + "2. Show all the students" + "\n" + "3. Delete student using ID");
 			p = sc.nextInt();
 
 			switch (p) {
@@ -112,44 +111,41 @@ public class main {
 			case 3:
 				System.out.println("Enter Id Number");
 				id = sc.nextInt();
-				alm.delete(id);			
+				alm.delete(id);
+			}
+
+		} else if (key == 4) {
+
+			int id, idSubject;
+			String section, time;
+			ClaseManagement clm = new ClaseManagement();
+			System.out.println("Write the number of the action u want to do");
+			System.out.println(
+					"1. Insert new class" + "\n" + "2. Show all the class" + "\n" + "3. Delete class using ID");
+			p = sc.nextInt();
+
+			switch (p) {
+			case 1:
+				System.out.println("Enter Id Class");
+				id = sc.nextInt();
+				System.out.println("Enter Section");
+				section = sc.next();
+				System.out.println("Enter Time Class");
+				time = sc.next();
+				System.out.println("Enter Id Subject");
+				idSubject = sc.nextInt();
+				clm.insert(id, section, time, idSubject);
+				break;
+			case 2:
+				clm.select();
+				break;
+			case 3:
+				System.out.println("Enter Id Class");
+				id = sc.nextInt();
+				clm.delete(id);
+			}
+
 		}
-
-		
-
-	}else if(key == 4) {
-
-		int id, idSubject;
-		String section, time;
-		ClaseManagement clm = new ClaseManagement();
-		System.out.println("Write the number of the action u want to do");
-		System.out.println("1. Insert new class" + "\n" + "2. Show all the class" + "\n" + "3. Delete class using ID");
-		p = sc.nextInt();
-
-		switch (p) {
-		case 1:
-			System.out.println("Enter Id Class");
-			id = sc.nextInt();
-			System.out.println("Enter Section");
-			section = sc.next();
-			System.out.println("Enter Time Class");
-			time = sc.next();
-			System.out.println("Enter Id Subject");
-			idSubject = sc.nextInt();
-			clm.insert(id, section, time, idSubject);
-			break;
-		case 2:
-			clm.select();
-			break;
-		case 3:
-			System.out.println("Enter Id Class");
-			id = sc.nextInt();
-			clm.delete(id);			
 	}
 
-	
-
-}
-}
-	
 }

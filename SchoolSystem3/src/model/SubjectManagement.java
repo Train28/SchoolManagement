@@ -21,7 +21,6 @@ public class SubjectManagement extends Conexion {
 		} catch (Exception e) {
 			System.out.println("Error :" + e);
 		}
-
 	}
 
 	public void deleteSubject(int id_sub) {
@@ -39,7 +38,6 @@ public class SubjectManagement extends Conexion {
 
 		try {
 			String sql = "select * from subject";
-			// PreparedStatement stmt = conn.prepareStatement(sql);
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
