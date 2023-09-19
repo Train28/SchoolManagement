@@ -33,7 +33,6 @@ public class AlumnoManagement {
 
 	
 	public void delete(int id) {
-
 		
 		try {
 			String sql = "delete from student where id_student ="+id;
@@ -45,7 +44,6 @@ public class AlumnoManagement {
 		}
 		
 	}
-
 	
 	public void select() {
 		try {
@@ -59,14 +57,10 @@ public class AlumnoManagement {
 				int age = rs.getInt("age_student");
 				double pension = rs.getInt("pension");				
 				System.out.println(id + "|| " + name+"|| " + address+"|| " + age+"|| " + pension);
-			}
-			
-			
+			}			
 		} catch (Exception e) {
 			System.out.println("Error " + e);
-		}
-		
-		
+		}		
 	}
 
 	

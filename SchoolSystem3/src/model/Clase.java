@@ -1,7 +1,7 @@
 package model;
 
 public class Clase {
-
+	
 	private int id_class;
 	private String section;
 	private String time_class;
