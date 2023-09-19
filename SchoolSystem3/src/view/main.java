@@ -1,8 +1,7 @@
 package view;
 
-import controller.Conexion;
+
 import model.*;
-import java.sql.*;
 
 import java.util.*;
 
@@ -11,7 +10,7 @@ public class main {
 	public static void main(String[] args) {
 
 		System.out.println("Write the number u want to register");
-		System.out.println("1. Subject" + "\n" + "2. Teacher"+ "\n" + "3. Student");
+		System.out.println("1. Subject" + "\n" + "2. Teacher"+ "\n" + "3. Student"+ "\n" + "4. Class");
 		Scanner sc = new Scanner(System.in);
 		int key = sc.nextInt();
 		int p;
@@ -41,7 +40,6 @@ public class main {
 				idSubject = sc.nextInt();
 				subm.deleteSubject(idSubject);
 				break;
-
 			default:
 				break;
 			}
@@ -74,15 +72,12 @@ public class main {
 				break;
 			case 2:
 				tm.selectTeacher();
-
 				break;
 			case 3:
 				System.out.println("Enter Id Number");
 				idTeacher = sc.nextInt();
 				tm.deleteTeacher(idTeacher);
-
 				break;
-
 			default:
 				break;
 			}
@@ -113,37 +108,48 @@ public class main {
 				break;
 			case 2:
 				alm.select();
-
 				break;
 			case 3:
 				System.out.println("Enter Id Number");
 				id = sc.nextInt();
-				alm.delete(id);
-			
-			
+				alm.delete(id);			
 		}
 
-		/*
-		 * System.out.println("Create clase"); Scanner sc = new Scanner(System.in);
-		 * 
-		 * int idSubject= sc.nextInt(); String section=sc.next(); String
-		 * time_class=sc.next(); int id_subject=sc.nextInt();
-		 * 
-		 * Clase cl= new Clase(idSubject, section, time_class, id_subject);
-		 * 
-		 * 
-		 * try { c.getConexion(); String sql =
-		 * "insert into class(id_class,section,time_class,id_number_subject)" +
-		 * "values(?,?,?,? )"; PreparedStatement stmt =
-		 * Conexion.con.prepareStatement(sql); stmt.setInt(1, cl.getId_class());
-		 * stmt.setString(2, cl.getSection()); stmt.setString(3, cl.getTime_class());
-		 * stmt.setInt(4, cl.getId_subject());
-		 * 
-		 * stmt.execute(); System.out.println("Registro exitoso"); } catch (Exception e)
-		 * { // TODO: handle exception }
-		 */
+		
 
+	}else if(key == 4) {
+
+		int id, idSubject;
+		String section, time;
+		ClaseManagement clm = new ClaseManagement();
+		System.out.println("Write the number of the action u want to do");
+		System.out.println("1. Insert new class" + "\n" + "2. Show all the class" + "\n" + "3. Delete class using ID");
+		p = sc.nextInt();
+
+		switch (p) {
+		case 1:
+			System.out.println("Enter Id Class");
+			id = sc.nextInt();
+			System.out.println("Enter Section");
+			section = sc.next();
+			System.out.println("Enter Time Class");
+			time = sc.next();
+			System.out.println("Enter Id Subject");
+			idSubject = sc.nextInt();
+			clm.insert(id, section, time, idSubject);
+			break;
+		case 2:
+			clm.select();
+			break;
+		case 3:
+			System.out.println("Enter Id Class");
+			id = sc.nextInt();
+			clm.delete(id);			
 	}
+
+	
+
+}
 }
 	
 }

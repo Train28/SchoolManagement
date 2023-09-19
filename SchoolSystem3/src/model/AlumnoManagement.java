@@ -41,7 +41,7 @@ public class AlumnoManagement {
 			stmt.execute();
 			System.out.println("Borrado exitoso");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error :" + e);
 		}
 		
 	}
