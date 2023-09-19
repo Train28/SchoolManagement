@@ -1,7 +1,7 @@
 package model;
 
-public class Alumno extends Person{
-	
+public class Alumno extends Person {
+
 	private double pension;
 
 	public Alumno(int dni, String name, String address, int age, double pension) {
@@ -9,7 +9,6 @@ public class Alumno extends Person{
 		this.pension = pension;
 	}
 
-	
 	public double getPension() {
 		return pension;
 	}
@@ -17,11 +16,5 @@ public class Alumno extends Person{
 	public void setPension(double pension) {
 		this.pension = pension;
 	}
-
-	
-
-
-	
-	
 
 }

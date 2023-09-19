@@ -12,24 +12,12 @@ public class Conexion {
 	public static Connection con;	
 	
 	public Connection getConexion() {
-		
 		try {
 			Class.forName(drv);
-			con = DriverManager.getConnection(url,user,pass);
-			
-			
-			
+			con = DriverManager.getConnection(url, user, pass);
 		} catch (Exception e) {
-			System.out.println("ERROR "+e);
+			System.out.println("ERROR " + e);
 		}
-		
-		
 		return con;
-	}
-	
-	
-	void hola() {
-		
-	}
-	
+	}	
 }

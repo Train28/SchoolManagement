@@ -4,12 +4,13 @@ import controller.Conexion;
 import java.sql.*;
 import java.util.Iterator;
 
-public class AlumnoManagement {
+public class TeacherManagement {
 
 	Conexion c = new Conexion();
 	Connection conn = c.getConexion();
 
-	public void insertTeacher(int idTeacher, String nameTeacher, String address, int age, double salary,int teachingHours) {
+	public void insertTeacher(int idTeacher, String nameTeacher, String address, int age, double salary,
+			int teachingHours) {
 
 		Teacher t = new Teacher(idTeacher, nameTeacher, address, age, salary, teachingHours);
 
@@ -36,14 +37,10 @@ public class AlumnoManagement {
 	public void deleteTeacher(int id_t) {
 
 		try {
-
 			String sql = "delete from teacher where id_teacher =" + id_t + "";
-
 			PreparedStatement stmt = conn.prepareStatement(sql);
-
 			stmt.execute();
 			System.out.println("Borrado exitoso");
-
 		} catch (Exception e) {
 			System.out.println("Error " + e);
 		}
@@ -53,33 +50,22 @@ public class AlumnoManagement {
 	public void selectTeacher() {
 
 		try {
-			
-			
-			
 			String sql = "select * from teacher";
-			
-			
-			//PreparedStatement stmt = conn.prepareStatement(sql);
-			
+			// PreparedStatement stmt = conn.prepareStatement(sql);
 			Statement stmt = conn.createStatement();
-			
-			
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				int id= rs.getInt("id_teacher");
-				String name= rs.getString("name_teacher");
-				String address= rs.getString("address");
-				int age= rs.getInt("age_teacher");
-				double salary= rs.getDouble("salary");
-				int teachHours= rs.getInt("teaching_hours");
-				
-				System.out.println(id+"/ "+name+"/ "+address+"/ "+age+"/ "+salary+"/ "+teachHours);
-
+				int id = rs.getInt("id_teacher");
+				String name = rs.getString("name_teacher");
+				String address = rs.getString("address");
+				int age = rs.getInt("age_teacher");
+				double salary = rs.getDouble("salary");
+				int teachHours = rs.getInt("teaching_hours");
+				System.out.println(id + "/ " + name + "/ " + address + "/ " + age + "/ " + salary + "/ " + teachHours);
 			}
-			
-			
-		} catch (Exception e) {
-			// TODO: handle exception
+
+		} catch (Exception e) {			
+			System.out.println("Error: "+ e);
 		}
 
 	}
