@@ -45,7 +45,7 @@ public class SubjectManagement extends Conexion {
 			while (rs.next()) {
 				int id = rs.getInt("id_number_subject");
 				String name = rs.getString("name_subject");
-				System.out.println(id + "/ " + name);
+				System.out.println(id + "||" + name);
 			}
 		} catch (Exception e) {
 			System.out.println("Error: " + e);

@@ -29,7 +29,7 @@ public class TeacherManagement {
 			stmt.execute();
 			System.out.println("Registro exitoso");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error :"+e);
 		}
 
 	}

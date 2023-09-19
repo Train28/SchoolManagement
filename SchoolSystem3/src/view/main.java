@@ -10,9 +10,8 @@ public class main {
 
 	public static void main(String[] args) {
 
-		// Conexion c = new Conexion();
 		System.out.println("Write the number u want to register");
-		System.out.println("1. Subject" + "\n" + "2. Teacher");
+		System.out.println("1. Subject" + "\n" + "2. Teacher"+ "\n" + "3. Student");
 		Scanner sc = new Scanner(System.in);
 		int key = sc.nextInt();
 		int p;
@@ -88,8 +87,40 @@ public class main {
 				break;
 			}
 
-		} else {
-			;
+		} else if(key == 3) {
+
+			int id, age;
+			String name, address;
+			double pension;
+			AlumnoManagement alm = new AlumnoManagement();
+			System.out.println("Write the number of the action u want to do");
+			System.out.println("1. Insert new student" + "\n" + "2. Show all the students" + "\n" + "3. Delete student using ID");
+			p = sc.nextInt();
+
+			switch (p) {
+			case 1:
+				System.out.println("Enter Id Student");
+				id = sc.nextInt();
+				System.out.println("Enter name Student");
+				name = sc.next();
+				System.out.println("Enter address");
+				address = sc.next();
+				System.out.println("Enter age");
+				age = sc.nextInt();
+				System.out.println("Enter pension");
+				pension = sc.nextDouble();
+				alm.insert(id, name, address, age, pension);
+				break;
+			case 2:
+				alm.select();
+
+				break;
+			case 3:
+				System.out.println("Enter Id Number");
+				id = sc.nextInt();
+				alm.delete(id);
+			
+			
 		}
 
 		/*
@@ -113,4 +144,6 @@ public class main {
 		 */
 
 	}
+}
+	
 }
